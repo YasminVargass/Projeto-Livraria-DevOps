@@ -28,4 +28,17 @@ const bookstore = [
     },
   ];
   
+
+  const fileSistem = require('fs');
+  const dataJSON = JSON.stringify(bookstore);
+  const nameJSONFile = 'dataBookstore.json';
+  
+  fileSistem.writeFile(nameJSONFile, dataJSON,(err)=>{
+    if (err) {
+      console.error("Ocorreu um erro na gravação", err);
+      return;
+    }
+  })
+  
+
   module.exports = {bookstore};

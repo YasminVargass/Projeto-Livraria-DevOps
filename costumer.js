@@ -12,5 +12,17 @@ const costumer = {
       state: "RJ",
     },
   };
-  
+
+const fileSistem = require('fs');
+const dataJSON = JSON.stringify(costumer);
+const nameJSONFile = 'dataCostumer.json';
+
+fileSistem.writeFile(nameJSONFile, dataJSON,(err)=>{
+  if (err) {
+    console.error("Ocorreu um erro na gravação", err);
+    return;
+  }
+})
+
+
   module.exports = {costumer};
